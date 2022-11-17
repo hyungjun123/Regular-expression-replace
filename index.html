@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+    <style>
+    #text{
+    text-align: center;
+    }
+    #hello{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    #show{
+    border: 1px solid black;
+    width: 500px;
+    height: 100px;
+    }
+    #change{
+    border: 1px solid black;
+    width: 500px;
+    height: 100px;
+    }
+    #input{
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    }
+    </style>
+    <script>
+    window.onload = function  (){
+    const firstShow = document.getElementById("show");
+    const input = document.getElementById("input");
+    input.onkeyup=function(){
+    firstShow.innerHTML = this.value;
+    
+    };
+
+    
+    const secondShow = document.getElementById("change");
+    const pattern = /됬/g;
+    input.onchange = function() {
+    this.value = this.value.replace(pattern,"됐");
+    secondShow.innerHTML = this.value;
+    
+    }
+   
+
+
+    };
+
+    </script>
+</head>
+<body>
+
+<div id="text">
+<input type="text" id="input"/> <br/>  
+</div>
+
+<div id="hello">
+ <div id="show" ></div>
+ ☞
+ <div id="change"></div>
+</div>
+
+
+
+</body>
+</html>
